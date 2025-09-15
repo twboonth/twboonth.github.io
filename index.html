@@ -34,11 +34,7 @@
                     <span class="link">Contact</span>
                 </a>
 
-                 <a href="http://localhost:3000/referer" id='getContact'>
-                    <span class="fas fa-at"></span>
-                    <span class="link">get Referer</span>
-                </a>
-                http://localhost:3000/referer
+                 <button onclick="myFunction()">Replace document</button>
             </nav>
         </header>
         <main>
@@ -295,5 +291,11 @@
 <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async"
     defer="defer"></script>
 <script src="main.js"></script>
+
+    <script>
+function myFunction() {
+  location.replace("http://localhost:3000/referer")
+}
+</script>
 
 </html>

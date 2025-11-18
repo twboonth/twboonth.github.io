@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Portfolio Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <style>
+        /* Optional: Smooth scrolling for section links */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8" x-data="{ open: false }">
+            <div class="flex justify-between items-center h-16">
+                <a href="#" class="text-2xl font-bold text-indigo-600">YourName.</a>
+
+                <div class="hidden md:flex space-x-8">
+                    <a href="#hero" class="text-gray-600 hover:text-indigo-600 transition duration-300">Home</a>
+                    <a href="#projects" class="text-gray-600 hover:text-indigo-600 transition duration-300">Projects</a>
+                    <a href="#canvas-example" class="text-gray-600 hover:text-indigo-600 transition duration-300">Demo</a>
+                </div>
+
+                <button @click="open = !open" class="md:hidden p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                    <svg x-show="!open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg x-show="open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <div x-show="open" @click.away="open = false" class="md:hidden py-2 space-y-1">
+                <a href="#hero" @click="open = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">Home</a>
+                <a href="#projects" @click="open = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">Projects</a>
+                <a href="#canvas-example" @click="open = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">Demo</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="hero" class="py-20 md:py-32 text-center bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4">
+                    Hi, I'm <span class="text-indigo-600">[Your Name]</span>
+                </h1>
+                <p class="text-xl sm:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                    A **[Your Role]** specializing in modern web applications.
+                </p>
+                <a href="#projects" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300">
+                    View My Work
+                </a>
+            </div>
+        </section>
+
+        <section id="projects" class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">My Recent Projects</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-[1.02] transition duration-300 ease-in-out">
+                        <img class="w-full h-48 object-cover" src="https://via.placeholder.com/600x400.png?text=Project+1" alt="Project Dashboard Mockup">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Project Title One</h3>
+                            <p class="text-gray-600 mb-4">A brief description of the project, highlighting key technologies used.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-medium bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded-full">Tailwind</span>
+                                <span class="text-xs font-medium bg-yellow-100 text-yellow-800 px-2.5 py-0.5 rounded-full">Alpine.js</span>
+                            </div>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">View Project &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-[1.02] transition duration-300 ease-in-out">
+                        <img class="w-full h-48 object-cover" src="https://via.placeholder.com/600x400.png?text=Project+2" alt="Mobile App Mockup">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Mobile App Concept</h3>
+                            <p class="text-gray-600 mb-4">Design-focused project emphasizing mobile-first responsiveness.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-medium bg-pink-100 text-pink-800 px-2.5 py-0.5 rounded-full">React</span>
+                                <span class="text-xs font-medium bg-gray-100 text-gray-800 px-2.5 py-0.5 rounded-full">CSS Grid</span>
+                            </div>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">View Project &rarr;</a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-[1.02] transition duration-300 ease-in-out">
+                        <img class="w-full h-48 object-cover" src="https://via.placeholder.com/600x400.png?text=Project+3" alt="E-commerce Website Mockup">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">E-commerce Platform</h3>
+                            <p class="text-gray-600 mb-4">A full-stack implementation demonstrating payment processing.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-medium bg-red-100 text-red-800 px-2.5 py-0.5 rounded-full">Django</span>
+                                <span class="text-xs font-medium bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded-full">PostgreSQL</span>
+                            </div>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">View Project &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        
+    </main>
+    
+    <footer class="bg-gray-800 text-white p-6 text-center mt-12">
+        &copy; 2025 Your Name. Built with Tailwind CSS and Alpine.js.
+    </footer>
+
+</body>
+</html>
